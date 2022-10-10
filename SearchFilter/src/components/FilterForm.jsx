@@ -10,7 +10,7 @@ export const FilterForm = () => {
         let arrayFiltrado
         if (word !== '') {
             arrayFiltrado = data.map(person => {
-                if (person.name.includes(word)) {
+                if (person.name.toLowerCase().includes(word.toLowerCase())) {
                     return person
                 }
             });
@@ -18,8 +18,6 @@ export const FilterForm = () => {
         } else {
             setFilter(null)
         }
-        console.log(arrayFiltrado)
-        console.log(word)
     }
     return (
         <form action="" className='bg-slate-800 flex'>
