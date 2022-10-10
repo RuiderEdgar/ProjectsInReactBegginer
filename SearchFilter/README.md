@@ -4,7 +4,7 @@ A simple data filter with a input search bar using placeholder api
 # Log
 Start date: 05/10/2022
 
-End date: XX/XX/XX
+End date: 10/10/20200
 
 ## Goals
 <ul>
