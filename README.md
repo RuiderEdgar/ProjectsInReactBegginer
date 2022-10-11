@@ -12,8 +12,9 @@ Code a minimum of one hour each day for the next 100 days.
 A few projects that I have completed during the challenge:
 
 <ol>
-  <li><a href='https://github.com/RuiderEdgar/ProjectsInReactBegginer/tree/main/SearchFilter'>TemperatureControlApp</a></li>
-  <li><a href='https://github.com/RuiderEdgar/ProjectsInReactBegginer/tree/main/TemperatureControlApp'>SearchFilter</a></li>
+  <li><a href='https://github.com/RuiderEdgar/ProjectsInReactBegginer/tree/main/SearchFilter'>Temperature Control App</a></li>
+  <li><a href='https://github.com/RuiderEdgar/ProjectsInReactBegginer/tree/main/TemperatureControlApp'>Search Filter</a></li>
+  <li><a href='https://github.com/RuiderEdgar/ProjectsInReactBegginer/tree/main/BasicRegistrationForm'>Basic Registration Form</a></li>
 </ol>
  
 ## Journal
