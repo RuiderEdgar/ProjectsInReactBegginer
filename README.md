@@ -15,8 +15,10 @@ A few projects that I have completed during the challenge:
   <li><a href='https://github.com/RuiderEdgar/ProjectsInReactBegginer/tree/main/SearchFilter'>Temperature Control App</a></li>
   <li><a href='https://github.com/RuiderEdgar/ProjectsInReactBegginer/tree/main/TemperatureControlApp'>Search Filter</a></li>
   <li><a href='https://github.com/RuiderEdgar/ProjectsInReactBegginer/tree/main/BasicRegistrationForm'>Basic Registration Form</a></li>
+  <li><a href='https://github.com/RuiderEdgar/ProjectsInReactBegginer/tree/main/reactQuizApp'>React Quiz App</a></li>
 </ol>
  
+ Link where i get the proyects: https://contactmentor.com/best-react-projects-for-beginners-easy/
 ## Journal
 You can follow my progress through the challenge:
 <ul>
