@@ -4,7 +4,7 @@ A simple form with user errors
 # Log
 Start date: 11/10/2022
 
-End date: xx/xx/2022
+End date: 18/10/2022
 
 ## Goals
 <ul>
@@ -27,3 +27,6 @@ Dandole la funcionalidad, Tratando de hacer pasar los componentes de los input a
 
 ## Día 5
 Arreglamos la manera en como pasar los datos desde los componentes input creados y gestionando los input que son requeridos, solo falta arreglar un bug con el boton
+
+## Día 6
+Bug arreglado (tener que darle dos veces al botón de registrar para que funcionara) y practica o proyecto completado

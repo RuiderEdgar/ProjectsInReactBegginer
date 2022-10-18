@@ -1,15 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Input } from './Input'
 
 export const Formulario = () => {
     const [datos, setDatos] = useState([])
     const [auxDatos, setAuxDatos] = useState({})
-    const [banderaDatos, setBanderaDatos] = useState(false)
     const [firstName, setFirstName] = useState()
     const [lastName, setLastName] = useState()
     const [email, setEmail] = useState()
+    //para quitar el formulario y mostrar los datos
     const [visibility, setVisibility] = useState(false)
     const onHandleRegister = () => {
+        let banderaDatos = false
         const objectInformation = {
             firstName: firstName,
             lastName: lastName,
@@ -18,18 +19,18 @@ export const Formulario = () => {
         for (const [key, value] of Object.entries(objectInformation)) {
             if (value == '' || value == null) {
                 Object.defineProperty(objectInformation, key, { value: false })
-                setBanderaDatos(false)
+                banderaDatos = false
                 setAuxDatos(objectInformation)
             } else {
-                setBanderaDatos(true)
+                banderaDatos = true
                 setAuxDatos(objectInformation)
             }
         }
         const array = Object.values(objectInformation)
         if (array.includes(false)) {
-            setBanderaDatos(false)
+            banderaDatos = false
         } else {
-            setBanderaDatos(true)
+            banderaDatos = true
         }
         if (banderaDatos) {
             setDatos(objectInformation)
