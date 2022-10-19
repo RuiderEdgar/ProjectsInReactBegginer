@@ -15,4 +15,5 @@ End date: XX/XX/20200
 
 ## Day 7
 Creando el proyecto con tailwind, eslint, prettier en vite.js
-Estilizando con tailwind
+Estilizando con tailwind.
+Creando los datos donde se guardaran las preguntas con respuestas y poderlo utilizar para renderizar los componentes
