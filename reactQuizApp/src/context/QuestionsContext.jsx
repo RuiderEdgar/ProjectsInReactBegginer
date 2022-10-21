@@ -9,7 +9,7 @@ export const QuestionsContextProvider = (props) => {
     const [questions, setQuestions] = useState({})
     useEffect(() => {
         setQuestions(dataQuizz)
-    }, [])
+    }, [dataQuizz])
 
     return (
         <QuestionsContext.Provider value={{ questions }}>

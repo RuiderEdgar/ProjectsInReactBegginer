@@ -8,7 +8,7 @@ export const dataQuizz = {
             }
         },
         {
-            "¿Cuanto me mide la torre": {
+            "¿Cuanto mide la torre?": {
                 "18 cm": false,
                 "3 cm": true,
                 "20 cm": false
