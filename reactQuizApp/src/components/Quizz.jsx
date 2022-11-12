@@ -2,55 +2,70 @@ import React, { useContext, useEffect, useState } from 'react'
 import { Preguntas } from './Preguntas'
 import { Options } from './Options'
 import { QuestionsContext } from '../context/QuestionsContext'
+import { Resultado } from './Resultado'
 
 
 export const Quizz = () => {
-    const { questions } = useContext(QuestionsContext)
+    const { questions, logRespuestas } = useContext(QuestionsContext)
     const [arrayPreguntas, setArrayPreguntas] = useState([])
-    const [options, setOptions] = useState([])
     const [auxKey, setAuxKey] = useState('')
-    const [numberQuestion, setNumberQuestion] = useState(1)
+    const [options, setOptions] = useState([])
+    const [numberQuestion, setNumberQuestion] = useState(0)
+    const [fin, setFin] = useState(false)
+    const [score, setScore] = useState(0)
+    const [numeroPreguntas, setnumeroPreguntas] = useState(0)
 
-
+    //Guardando todas las preguntas en un array
     useEffect(() => {
         //bloque para meter cada key del array de objetos en un array
         let auxPreguntas = []
         for (let pregunta in questions.preguntas) {
             auxPreguntas.push(questions.preguntas && Object.keys(questions.preguntas[pregunta]))
+            setnumeroPreguntas(pregunta)
         }
         auxPreguntas = auxPreguntas.flat()
-        //------------------------------------------------------------
+
         //guardamos el array en un useState
         setArrayPreguntas(auxPreguntas)
 
+        // setFin
+        setFin(false)
     }, [questions])
-    //------------------------------------------------------------
 
-    //cree un useState para que se vaya guardando una sola key osea una pregunta para asi acceder a sus respuestas
+    //use effect para guardar la pregunta actual
     useEffect(() => {
-        setAuxKey(arrayPreguntas[numberQuestion] ?? '¿cuantos años tengo?')
+        setAuxKey(arrayPreguntas[numberQuestion] ?? arrayPreguntas['¿Cuál es la velocidad de la luz?'])
+        //al final ?? si es nulo, de momento va a tomar la primera pregunta para renderizar y no renderize null o undefined
     }, [numberQuestion])
-    //----------------------------------------------------------------------
 
-    //Cree otro useState para guardar las key de las preguntas dependiendo en que pregunta nos encontremos
+    //use effect para guardar cada key respuesta, osea la respuesta a mostrar
     useEffect(() => {
-        let auxOptions = questions.preguntas && questions.preguntas[numberQuestion] && Object.keys(questions.preguntas[numberQuestion][auxKey] ?? questions.preguntas[0]['¿cuantos años tengo?'])
+        let auxOptions = questions.preguntas && questions.preguntas[numberQuestion] && Object.keys(questions.preguntas[numberQuestion][auxKey] ?? questions.preguntas[0]['¿Cuál es la velocidad de la luz?'])
+        // al final ?? si es nulo, de momento va a tomar la primera pregunta para renderizar y no renderize null
         setOptions(auxOptions)
     }, [auxKey])
-    //Todo veremos si podemos renderizar el componente
-    //Todo pasar todo a context
 
-    // console.log(auxKey)
-    console.log(options)
-    // console.log(auxOptions)
+    const correctAswer = () => {
+        setScore(score + 1)
+    }
 
+    const siguientePregunta = () => {
+        if (numberQuestion <= (arrayPreguntas.length - 2)) {
+            setNumberQuestion(numberQuestion + 1)
+        } else {
+            setFin(true)
+        }
+    }
 
     return (
         <div className='m-auto h-80 w-2/3 bg-cyan-900 rounded-md flex p-4 shadow-lg shadow-black'>
             {/* numero de pregunta y pregunta */}
-            <Preguntas preguntas={arrayPreguntas} />
+            <Preguntas preguntas={arrayPreguntas} numberQuestion={numberQuestion} className={fin ? 'hidden' : 'block'} />
+
             {/* preguntas */}
-            <Options />
+            <Options options={options} nextQuestion={siguientePregunta} className={fin ? 'hidden' : 'flex'} arrayLogRespuestas={Object.values(logRespuestas)} preguntasArray={Object.values(arrayPreguntas)} correctAswer={correctAswer} numberQuestion={numberQuestion} />
+
+            <Resultado className={fin ? 'flex' : 'hidden'} score={score} numeroPreguntas={numeroPreguntas} />
         </div>
     )
 }

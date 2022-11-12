@@ -7,12 +7,23 @@ export const QuestionsContext = createContext()
 
 export const QuestionsContextProvider = (props) => {
     const [questions, setQuestions] = useState({})
+    const [logRespuestas, setLogRespuestas] = useState([]);
+
     useEffect(() => {
         setQuestions(dataQuizz)
     }, [dataQuizz])
 
+    const registrandoRespuestas = (respuesta) => {
+        setLogRespuestas([...logRespuestas, respuesta])
+    }
+
     return (
-        <QuestionsContext.Provider value={{ questions }}>
+        <QuestionsContext.Provider value={
+            {
+                questions,
+                registrandoRespuestas,
+                logRespuestas
+            }}>
             {props.children}
         </QuestionsContext.Provider>
     )
