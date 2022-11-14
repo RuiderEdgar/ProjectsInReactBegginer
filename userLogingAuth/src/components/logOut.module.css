@@ -1,0 +1,8 @@
+.botonLogOut {
+    padding: 0.5rem 1rem;
+    border: 2px solid rgb(167, 11, 11);
+    background-color: rgb(230, 14, 14);
+    color: aliceblue;
+    font-weight: bold;
+    margin: 0.5rem 1rem;
+}

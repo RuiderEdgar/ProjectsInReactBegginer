@@ -1,0 +1,8 @@
+.botonLogin {
+    padding: 0.5rem 1rem;
+    border: 2px solid rgb(9, 9, 197);
+    background-color: rgb(11, 78, 167);
+    color: aliceblue;
+    font-weight: bold;
+    margin: 0.5rem 1rem;
+}
